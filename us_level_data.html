@@ -1,0 +1,197 @@
+<!--HTML with all of the US-level visualizations-->
+
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<title>Final Project - Michael Bassett</title>
+	<link rel="stylesheet" type="text/css" href="finalprojectstyles.css" />
+	
+	<!--The below code is for Tableau-->
+	<script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+	<script type="text/javascript">
+		
+        function initViz() {
+			//3 digit level vizs
+			
+			//area chart
+			var containerDiv2 = document.getElementById("vizContainer2"),
+				
+				url = "https://public.tableau.com/views/AreaChart2012-2016/USAreaChart?:embed=y&:display_count=yes&publish=yes&:origin=viz_share_link",
+
+				options = {
+                    hideTabs: true,
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the 2nd viz has finished loading.");
+                    }
+                };
+
+            var viz2 = new tableau.Viz(containerDiv2, url, options);
+			
+			//difference 
+			var containerDiv3 = document.getElementById("vizContainer3"),
+				
+				url = "https://public.tableau.com/views/3digitNAICS-ManufacturingDifferences/USdifference3digit?:embed=y&:display_count=yes&publish=yes&:origin=viz_share_link",
+
+				options = {
+                    hideTabs: true,
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the 3rd viz has finished loading.");
+                    }
+                };
+
+            var viz3 = new tableau.Viz(containerDiv3, url, options);
+			
+			//percent change
+			var containerDiv4 = document.getElementById("vizContainer4"),
+				
+				url = "https://public.tableau.com/views/3digitNAICS-ManufacturingPercentChanges/USpctchg3digit?:embed=y&:display_count=yes&publish=yes&:origin=viz_share_link",
+
+				options = {
+                    hideTabs: true,
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the 4th viz has finished loading.");
+                    }
+                };
+
+            var viz4 = new tableau.Viz(containerDiv4, url, options);
+			
+			//2016 bubble chart
+            var containerDiv = document.getElementById("vizContainer"),
+				
+				url = "https://public.tableau.com/views/NationalLevelBubbleChart-2016Data/2016USBubbleChart?:embed=y&:display_count=yes&publish=yes&:origin=viz_share_link",
+
+				options = {
+                    hideTabs: true,
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the viz has finished loading.");
+                    }
+                };
+			
+            var viz = new tableau.Viz(containerDiv, url, options);
+			
+			//top 10
+			var containerDiv5 = document.getElementById("vizContainer5"),
+
+				url = "https://public.tableau.com/views/Top10ManufacturingIndustries2016/Top10NationalIndustries2016?:embed=y&:display_count=yes&publish=yes&:origin=viz_share_link",
+
+				options = {
+                    hideTabs: true,
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the 5th viz has finished loading.");
+                    }
+                };
+
+            var viz5 = new tableau.Viz(containerDiv5, url, options);
+			
+			//bottom 10
+			var containerDiv6 = document.getElementById("vizContainer6"),
+
+				url = "https://public.tableau.com/views/Bottom10ManufacturingIndustries2016/Bottom10NationalIndustries2016?:embed=y&:display_count=yes&publish=yes&:origin=viz_share_link",
+
+				options = {
+                    hideTabs: true,
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the 6th viz has finished loading.");
+                    }
+                };
+
+            var viz6 = new tableau.Viz(containerDiv6, url, options);
+			
+			//sector bubble chart
+			var containerDiv7 = document.getElementById("vizContainer7"),
+
+				url = "https://public.tableau.com/views/ManufacturingSectorBubbleChart/SectorBubbleChart?:embed=y&:display_count=yes&publish=yes&:origin=viz_share_link",
+
+				options = {
+                    hideTabs: true,
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the 7th viz has finished loading.");
+                    }
+                };
+
+            var viz7 = new tableau.Viz(containerDiv7, url, options);
+        }
+    </script>
+	
+	
+</head>
+
+<body onload="initViz();">
+	<div id="main">
+		<div id="header">
+			<div id="title">
+				<div id="title_text">
+					<h1>Final Project</h1>
+					<h2>Michael Bassett</h2>
+				</div> <!--title_text-->
+			</div> <!--title-->
+			
+			<div id="tabs1">
+				<ul id="tabs2">
+					<li><a href="index.html">Introduction</a></li>
+					<li class="selected"><a href="us_level_data.html">US-Level Data</a></li>
+					<li><a href="st_level_data.html">State-Level Data</a></li>
+					<li><a href="sources.html">Source</a></li>
+				</ul> <!--tabs2-->
+			</div> <!--tabs1-->
+		</div> <!--header-->
+		
+		
+		<div id="website_content">
+			<div id="content">
+				<h1>2012-2016 MANUFACTURING TOTALS</h1>
+				<div id="vizContainer7" style="width:825px; height:400px;"></div>
+				<p>This bubble chart offers us a great initial snapshot of how the manufacturing sector has changed from 2012 to 2016. Firstly, we can see that
+				from 2012-2014, both receipts and costs were steadily increasing, before drastic drops in 2015. Since then, the decline has continued into 2016. Employment, which is expressed
+				through the size of each bubble, has remained relatively flat, decreasing from 11.2 million to 11.1 million over five years. Perhaps most interestingly, despite the other key variables
+				dropping, payroll has soared, indicated through the color of each bubble. The statistics for each year can be seen by simply hovering over each bubble in the visualization. </p>
+				
+				<h1>MANUFACTURING SUBSECTOR VISUALIZATIONS</h1>
+				<h2>2012-2016 Subsector Area Chart</h2>
+				<div id="vizContainer2" style="width:825px; height:400px;"></div>
+				<p>The above area chart displays 3-digit NAICS Codes within the manufacturing sector. By adjusting the filters, we can see the dominate subsectors in the country for 
+				receipts, costs, payroll, and employment. In addition to viewing all subsectors at once, the NAICS filters were also added if statistics for a single NAICS are needed.Transportation,
+				Chemical, and Food Manufacturing have a consistently large presence. Also, interestingly if we filter to look at employees, we can see a more even spread amongst NAICS Codes.</p>
+				
+				<h2>2012-2016 Subsector Difference Comparison</h2>
+				<div id="vizContainer3" style="width:825px; height:400px;"></div>
+				<p>This bar chart shows the absolute differences for our variables over the past 5 years of available data. NAICS 336, Transportation Equipment 
+				Manufacturing, has solid increases across the board, indicating growth. Meanwhile, Petroleum and Coal Products Manufacturing has significant losses in receipts. Looking at payroll, we can 
+				see that in many subsectors, employees are being compensated better than they were in 2012, especially the ones in which employees decreased but payroll increased (such as NAICS 332).</p>
+				
+				<h2>2012-2016 Subsector Percent Change Comparison</h2>
+				<div id="vizContainer4" style="width:825px; height:400px;"></div>
+				<p>This bar chart is laid out similarly, but compares the percent changes over 5 years instead. Wood product manufacturing had noteworthy increases that were not as visible 
+				in the earlier view. The same could be said for NAICS 312, but only for annual payroll and number of employees. Lastly, apparel manufacturing had significant decreases across the board
+				from a percent change perspective.</p>
+				
+				<h2>2016 Subsector Bubble Chart</h2>
+				<div id="vizContainer" style="width:825px; height:400px;"></div>
+				<p>This unique visualization allows us to collectively view all four variables at once for the year 2016. The x-axis denotes receipts while the y-axis shows costs. The color of each bubble is 
+				determined by the subsectors annual payroll, and lastly the size of the bubble indicates the number of employees. Petroluem and coal products manufacturing is an interesting outlier, as its
+				value of shipments and cost of materials are fairly high, while its payroll and employees are significantly low.</p>
+				
+				<h1>MANUFACTURING NATIONAL INDUSTRY VISUALIZATIONS</h1>
+				
+				<h2>Top 10 Industries (2016)</h2>
+				<div id="vizContainer5" style="width:825px; height:400px;"></div>
+				<p>Top 3 Receipts: Petroleum refineries, Light truck and utility vehicle mfg, Pharmaceutical preparation mfg</p>
+				<p>Top 3 Cost of Materials: Petroleum refineries, Light truck and utility vehicle mfg, Automobile mfg</p>
+				<p>Top 3 Payroll: Commercial printing (except screen and books), All other plastics product mfg, Aircraft mfg</p>
+				<p>Top 3 Number of Employees: All other plastics product mfg, Commercial printing (except screen and books), Poultry processing</p>
+				
+				<h2>Bottom 10 Industries (2016)</h2>
+				<div id="vizContainer6" style="width:825px; height:400px;"></div>
+				<p>Bottom 3 Receipts: Other apparel knitting mills, Women's handbag and purse mfg, Blank magnetic and optical recording media mfg</p>
+				<p>Bottom 3 Cost of Materials: Other apparel knitting mills, Women's handbag and purse mfg, Ice mfg</p>
+				<p>Bottom 3 Payroll: Blank magnetic and optical recording media mfg, Women's handbag and purse mfg, Other apparel knitting mills</p>
+				<p>Bottom 3 Number of Employees: Blank magnetic and optical recording media mfg, Malt mfg, Women's handbag and purse mfg</p>
+			</div> <!--content-->
+		</div> <!--website_content-->
+	</div> <!--main-->
+
+</body>
+
+</html>

@@ -1,0 +1,124 @@
+<!--HTML with all of the state-level visualizations-->
+
+<!--These are the google spreadsheet links that you will need later-->
+<!--https://docs.google.com/spreadsheets/d/1tbEkxtKL8MEv2JH6oq0sl-lue-C5akSDHu7vNpe8EHk/edit?usp=sharing-->
+<!--https://docs.google.com/spreadsheets/d/1tbEkxtKL8MEv2JH6oq0sl-lue-C5akSDHu7vNpe8EHk/gviz/tq-->
+
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<title>Final Project - Michael Bassett</title>
+	<link rel="stylesheet" type="text/css" href="finalprojectstyles.css" />
+	
+	<!--The below code is for Tableau-->
+	<script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+	<script type="text/javascript">
+        function initViz() {
+		
+			//Difference Visualization
+            var containerDiv = document.getElementById("vizContainer"),
+                
+				url = "https://public.tableau.com/views/ManufacturingChangesfrom2012-2016/Attempt2?:embed=y&:display_count=yes&publish=yes&:origin=viz_share_link",
+				//Extra links that you don't think you need, but just in case...
+				//url = "https://public.tableau.com/views/test2_15648612140020/BAN?:embed=y&:display_count=yes&publish=yes&:origin=viz_share_link",
+				//the actual link: https://public.tableau.com/profile/michael.bassett#!/vizhome/test2_15648612140020/BAN?publish=yes
+				//line of code in stack overflow: "http://localhost:85/views/test_page/Sheet1?:embed=y&:display_count=no";
+				//the link when you click "share":https://public.tableau.com/views/test2_15648612140020/BAN?:embed=y&:display_count=yes&publish=yes&:origin=viz_share_link
+                //there was another link that said "embed" that you did NOT use. Maybe later you will need it
+				options = {
+                    hideTabs: true,
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the viz has finished loading.");
+                    }
+                };
+
+            var viz = new tableau.Viz(containerDiv, url, options);
+			
+			//Percent Change Visualization
+			var containerDiv2 = document.getElementById("vizContainer2"),
+                
+				url = "https://public.tableau.com/views/ManufacturingPercentChangesfrom2012-2016/Percent_Change?:embed=y&:display_count=yes&publish=yes&:origin=viz_share_link",
+
+				options = {
+                    hideTabs: true,
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the 2nd viz has finished loading.");
+                    }
+                };
+
+            var viz2 = new tableau.Viz(containerDiv2, url, options);
+			
+			//2016 State Data Visualization
+			var containerDiv3 = document.getElementById("vizContainer3"),
+                
+				url = "https://public.tableau.com/views/2016StateFigures/2016state?:embed=y&:display_count=yes&publish=yes&:origin=viz_share_link",
+
+				options = {
+                    hideTabs: true,
+                    onFirstInteractive: function () {
+                        console.log("Run this code when the 3rd viz has finished loading.");
+                    }
+                };
+
+            var viz3 = new tableau.Viz(containerDiv3, url, options);
+    
+        }
+		
+    </script>
+	
+</head>
+
+<body onload="initViz();">
+	<div id="main">
+		<div id="header">
+			<div id="title">
+				<div id="title_text">
+					<h1>Final Project</h1>
+					<h2>Michael Bassett</h2>
+				</div> <!--title_text-->
+			</div> <!--title-->
+			
+			<div id="tabs1">
+				<ul id="tabs2">
+					<li><a href="index.html">Introduction</a></li>
+					<li><a href="us_level_data.html">US-Level Data</a></li>
+					<li class="selected"><a href="st_level_data.html">State-Level Data</a></li>
+					<li><a href="sources.html">Source</a></li>
+				</ul> <!--tabs2-->
+			</div> <!--tabs1-->
+		</div> <!--header-->
+		
+		
+		<div id="website_content">
+			<div id="content">
+				<h1>STATE-LEVEL VISUALIZATIONS</h1>		
+				
+				<h2>2012-2016 Manufacturing Differences by State</h2>
+				<div id="vizContainer" style="width:825px; height:550px;"></div>
+				<p>This interactive map displays absolute differences for each of our four variables from 2012-2016. While the default view is for the entire manufacturing sector, 
+				we can also filter to 3 and 4-digit NAICS Codes if desired. Texas had a staggering decrease in receipts of 179 billion over that span, and Texas, California, and New York all
+				lost a substantial amount of employees as well. From a payroll perspective, we can see that there are increases in most states, which aligns with our conclusions discussed 
+				at the national level. </p>
+				
+				<h2>2012-2016 Manufacturing Percent Changes by State</h2>
+				<div id="vizContainer2" style="width:825px; height:550px;"></div>
+				<p>This map provides a similar view, but instead visualizes the percent changes for each state. While New Mexico's difference in receipts was not particularly notable,
+				the percent change is significant, decreasing by 56% from 2012 to 2016. Meanwhile, Nevada and Oregon had impressive gains. With regards to number of employees, 
+				Louisiana, Wyoming, and again New Mexico had large percentage decreases over the five years. Like the above map, we can also drill down to lower NAICS levels for even more data if needed. </p>
+				
+				<h2>2016 Variable Relationships by State</h2>
+				<div id="vizContainer3" style="width:825px; height:550px;"></div>
+				<p>These two tree maps demonstrate the relationships between receipts and costs, and payroll and employees for the latest year of manufacturing data (2016).
+				Texas, California, Ohio, and Michigan appear to be dominant
+				forces in the manufacturing sector, while Alaska, Wyoming, Hawaii, and DC don't have much of a presence. 
+				As we expect, in general the two variable pairings have positive relationships - that is, as one increases we expect the other to increase. 
+				One example of a notable difference to this trend is Animal Food Manufacturing, where five states have very similar employee counts despite differences in payroll.</p>
+			</div> <!--content-->
+		</div> <!--website_content-->
+	</div> <!--main-->
+
+</body>
+
+</html>

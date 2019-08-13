@@ -1,0 +1,128 @@
+/*Project 1 Styles*/ 
+
+/*changes how the site as a whole looks*/
+html {
+	height: 100%; 
+}
+
+/*makes everything a bit smaller which looks better in my opinion. changes font to cambria*/ 
+body{
+	font: normal 0.85em cambria; 
+	/*background is white on the sides*/
+	background: #fff; 
+	color: #555; 
+}
+
+/*important: moves the website as a whole to the center of the browser rather than all on the left*/ 
+#main, #header, #title, #tabs1, #website_content {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*Makes the title section, and adds a picture to the background*/ 
+#title { 
+	width: 890px;
+	position: relative;
+	height: 200px;
+	background: url(images/picture6.jpg) no-repeat; 
+}
+
+/*moves the titles out a little bit*/ 
+#title_text { 
+	position: absolute;  
+	top: 0px; 
+	left: 20px; 
+}
+
+/*changes the font to cambria, edits margins, etc*/ 
+#title h1, #title h2 { 
+	font: normal 300% 'cambria';
+	border-bottom: 0; 
+	text-transform: none;
+	margin: 0; 
+}
+
+/*Changes the padding, color, spacing and deocration for the "Project 1" in title*/ 
+#title_text h1 { 
+	padding: 10px 0 0 0; 
+	color: #F4F6F7; 
+	letter-spacing: 0.1em; 
+	text-decoration: none; 
+}
+
+/*Changes the font size, padding and color for the "Michael Bassett" in title*/
+#title_text h2 { 
+	font-size: 130%;
+	padding: 0;
+	color: #F4F6F7; 
+}
+
+/*Moves the tabs list closer to the center of the page, closer to the title area*/ 
+#tabs1 {
+	width: 900px; 
+	height: 35px; 
+	padding: 8px 0 0 0; 
+	margin: -45px 0 0 0; 
+	position: relative; 
+	z-index: 1; 
+	float: left; 
+}
+
+/*Moves the tabs list more to the right*/ 
+ul#tabs2 {
+	float: right; 
+	margin: 0; 
+}
+
+/*Changes the menu from a list from top to bottom to a list from left to right*/ 
+ul#tabs2 li { 
+	float: left;
+	margin: 5px 0 0 0; 
+	padding: 0 0 0 6px; 
+	list-style: none; 
+}
+
+/*Makes the tabs look more sophisticated, sets the color, etc.*/
+ul#tabs2 li a { 
+	letter-spacing: 0em; 
+	font: normal 105% cambria; 
+	text-transform: uppercase;
+	display: block; 
+	float: left;
+	height: 20px; 
+	text-decoration: none; 
+	padding: 9px 22px 5px 16px; 
+	text-align: center; 
+	color: #F4F6F7; /*#1F618D;*/
+	border: 0;
+} 
+
+/*bumps up the height so it's in line with the others, and adds padding*/ 
+ul#tabs2 li.selected a { 
+	height: 25px;
+	color: #555;
+	padding: 7px 22px 5px 16px; 
+}
+
+/*makes the selected tab look a certain color, and sets margins*/
+ul#tabs2 li.selected {
+	margin: 7px 0 0 0;
+	background: #f8f8f8;
+}
+
+/*background color changed to a shade of gray, etc.*/
+#website_content { 
+	width: 890px; 
+	overflow: hidden; 
+	background: #f8f8f8; 
+}
+
+/*moves everything to a more centralized location, dictates how far the line can go down before moving to the next row, etc.*/
+#content { 
+	text-align: left; 
+	width: 825px; 
+	float: left; 
+	padding: 20px 0 15px 30px; 
+} 
+
+
